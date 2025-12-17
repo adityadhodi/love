@@ -6,6 +6,7 @@
 <title>Happy Birthday My Love ❤️</title>
 
 <style>
+/* ===== BASE ===== */
 body{
     margin:0;
     min-height:100vh;
@@ -16,7 +17,7 @@ body{
     overflow-x:hidden;
 }
 
-/* MAIN CARD */
+/* ===== MAIN CARD ===== */
 .container{
     background:rgba(255,255,255,0.96);
     margin:60px auto;
@@ -30,15 +31,13 @@ body{
     animation:fadeUp 2s ease;
 }
 
-/* HEADINGS */
+/* ===== TEXT ===== */
 h1{
     color:#ff6b6b;
     font-size:3em;
     animation:pulse 2s infinite;
 }
-h2{ color:#ff8787; }
 
-/* TEXT */
 p{
     font-size:1.15em;
     line-height:1.7;
@@ -55,39 +54,10 @@ p{
     animation:spin 5s linear infinite;
 }
 
-/* BUBU DUDU IMAGES */
-.sticker{
-    position:absolute;
-    width:90px;
-    border-radius:20px;
-    animation:bounce 6s ease-in-out infinite, pop 2s infinite;
-    box-shadow:0 8px 15px rgba(255,105,135,0.4);
-    pointer-events:none;
-    z-index:1;
-}
-
-.sticker1{top:10%;left:5%;}
-.sticker2{top:15%;right:5%;animation-delay:1s;}
-.sticker3{bottom:10%;left:10%;animation-delay:2s;}
-.sticker4{bottom:15%;right:10%;animation-delay:3s;}
-
-/* BALLOONS */
-.balloon{
-    position:absolute;
-    font-size:2em;
-    animation:floatUp 6s linear infinite;
-    opacity:0.8;
-}
-.balloon:nth-child(1){left:10%;}
-.balloon:nth-child(2){left:30%;animation-delay:2s;}
-.balloon:nth-child(3){left:50%;animation-delay:4s;}
-.balloon:nth-child(4){left:70%;animation-delay:1s;}
-.balloon:nth-child(5){left:90%;animation-delay:3s;}
-
-/* CLICK ME BUTTON */
+/* ===== BUTTON ===== */
 .btn{
     margin-top:25px;
-    padding:14px 28px;
+    padding:14px 30px;
     font-size:1.2em;
     background:#ff6b6b;
     color:#fff;
@@ -97,15 +67,39 @@ p{
     box-shadow:0 8px 20px rgba(255,107,107,0.4);
     animation:pulse 2s infinite;
 }
-.btn:hover{ background:#ff4f4f; }
 
-/* POPUP */
+/* ===== STICKERS ===== */
+.sticker{
+    position:absolute;
+    width:90px;
+    border-radius:20px;
+    animation:bounce 6s ease-in-out infinite, pop 2s infinite;
+    box-shadow:0 8px 15px rgba(255,105,135,0.4);
+    pointer-events:none;
+}
+
+.sticker1{top:10%;left:5%;}
+.sticker2{top:15%;right:5%;}
+.sticker3{bottom:10%;left:10%;}
+.sticker4{bottom:15%;right:10%;}
+
+/* ===== BALLOONS ===== */
+.balloon{
+    position:absolute;
+    font-size:2em;
+    animation:floatUp 6s linear infinite;
+    opacity:0.8;
+}
+.balloon:nth-child(1){left:10%;}
+.balloon:nth-child(2){left:30%;}
+.balloon:nth-child(3){left:50%;}
+.balloon:nth-child(4){left:70%;}
+.balloon:nth-child(5){left:90%;}
+
+/* ===== POPUP ===== */
 .popup{
     position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    inset:0;
     background:rgba(0,0,0,0.5);
     backdrop-filter:blur(6px);
     display:none;
@@ -115,25 +109,25 @@ p{
 }
 
 .popup-content{
-    background:white;
+    background:#fff;
     padding:35px;
     max-width:500px;
+    width:90%;
     border-radius:25px;
     text-align:center;
     animation:fadeUp 0.8s ease;
-    box-shadow:0 20px 40px rgba(0,0,0,0.4);
 }
 
 .close{
     position:absolute;
-    top:20px;
-    right:25px;
+    top:15px;
+    right:20px;
     font-size:2em;
     cursor:pointer;
     color:#ff6b6b;
 }
 
-/* ANIMATIONS */
+/* ===== ANIMATIONS ===== */
 @keyframes bgMove{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
@@ -167,12 +161,25 @@ p{
     from{transform:rotate(0deg);}
     to{transform:rotate(360deg);}
 }
+
+/* ===== 📱 MOBILE VIEW ===== */
+@media (max-width: 600px){
+    .container{
+        margin:20px;
+        padding:25px;
+    }
+    h1{font-size:2.2em;}
+    p{font-size:1em;}
+    .cake{font-size:3em;}
+    .btn{font-size:1em;padding:12px 24px;}
+    .sticker{width:60px;}
+}
 </style>
 </head>
 
 <body>
 
-<!-- BUBU DUDU -->
+<!-- STICKERS -->
 <img src="bubu1.jpeg" class="sticker sticker1">
 <img src="bubu2.jpeg" class="sticker sticker2">
 <img src="bubu3.jpeg" class="sticker sticker3">
@@ -187,12 +194,8 @@ p{
 
 <div class="container">
     <h1>Happy Birthday My Love ❤️</h1>
-    <p><b>Dear Dobu,</b></p>
-
-    <p>
-        You are my happiness, my calm, and my forever.
-        Every day with you feels like a blessing.
-    </p>
+    <p><b>Dear [Her Name],</b></p>
+    <p>You are my happiness, my peace, and my forever.</p>
 
     <div class="hearts">💖 💕 💖</div>
     <div class="cake">🎂</div>
@@ -206,16 +209,10 @@ p{
         <span class="close" onclick="closePopup()">×</span>
         <h2>💌 My Love Letter</h2>
         <p>
-            From the moment you came into my life, everything changed.
-            Your smile is my favorite sight, your voice my favorite sound,
-            and your love my greatest gift.
+            You are my favorite person, my safest place,
+            and the best thing that ever happened to me.
         </p>
-        <p>
-            I promise to hold your hand through every storm,
-            laugh with you in every joy,
-            and love you deeper with every heartbeat.
-        </p>
-        <p><b>Happy Birthday, my forever ❤️</b></p>
+        <p><b>I love you forever ❤️</b></p>
     </div>
 </div>
 
