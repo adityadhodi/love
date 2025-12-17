@@ -6,196 +6,176 @@
 <title>Happy Birthday My Love ❤️</title>
 
 <style>
-/* ===== BASE ===== */
+/* ================= BASE ================= */
+*{
+    box-sizing:border-box;
+}
+
 body{
     margin:0;
-    min-height:100vh;
+    min-height:100dvh; /* FIX mobile height */
     background:linear-gradient(135deg,#ff9a9e,#fecfef,#ffecd2);
     background-size:400% 400%;
     animation:bgMove 8s ease infinite;
-    font-family:'Arial',sans-serif;
-    overflow-x:hidden;
+    font-family:Arial, sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
 }
 
-/* ===== MAIN CARD ===== */
+/* ================= CARD ================= */
 .container{
-    background:rgba(255,255,255,0.96);
-    margin:60px auto;
-    padding:40px;
-    max-width:700px;
-    border-radius:25px;
-    box-shadow:0 20px 45px rgba(0,0,0,0.3);
+    background:#ffffffee;
+    width:100%;
+    max-width:650px;
+    padding:30px;
+    border-radius:22px;
+    box-shadow:0 15px 40px rgba(0,0,0,0.25);
     text-align:center;
-    position:relative;
-    z-index:2;
-    animation:fadeUp 2s ease;
+    animation:fadeUp 1s ease;
 }
 
-/* ===== TEXT ===== */
+/* ================= TEXT ================= */
 h1{
     color:#ff6b6b;
-    font-size:3em;
-    animation:pulse 2s infinite;
+    font-size:2.4rem;
+    margin-bottom:10px;
 }
 
 p{
-    font-size:1.15em;
-    line-height:1.7;
+    font-size:1rem;
+    line-height:1.6;
     color:#444;
 }
 
 .hearts{
-    font-size:2em;
-    animation:heartbeat 1.5s infinite;
+    font-size:1.8rem;
+    margin:10px 0;
 }
 
 .cake{
-    font-size:4em;
-    animation:spin 5s linear infinite;
+    font-size:3rem;
+    margin:10px 0;
 }
 
-/* ===== BUTTON ===== */
+/* ================= BUTTON ================= */
 .btn{
-    margin-top:25px;
-    padding:14px 30px;
-    font-size:1.2em;
+    margin-top:20px;
+    width:100%;
+    padding:14px;
+    font-size:1.1rem;
     background:#ff6b6b;
-    color:#fff;
+    color:white;
     border:none;
     border-radius:30px;
     cursor:pointer;
-    box-shadow:0 8px 20px rgba(255,107,107,0.4);
-    animation:pulse 2s infinite;
 }
 
-/* ===== STICKERS ===== */
-.sticker{
-    position:absolute;
-    width:90px;
-    border-radius:20px;
-    animation:bounce 6s ease-in-out infinite, pop 2s infinite;
-    box-shadow:0 8px 15px rgba(255,105,135,0.4);
-    pointer-events:none;
-}
-
-.sticker1{top:10%;left:5%;}
-.sticker2{top:15%;right:5%;}
-.sticker3{bottom:10%;left:10%;}
-.sticker4{bottom:15%;right:10%;}
-
-/* ===== BALLOONS ===== */
-.balloon{
-    position:absolute;
-    font-size:2em;
-    animation:floatUp 6s linear infinite;
-    opacity:0.8;
-}
-.balloon:nth-child(1){left:10%;}
-.balloon:nth-child(2){left:30%;}
-.balloon:nth-child(3){left:50%;}
-.balloon:nth-child(4){left:70%;}
-.balloon:nth-child(5){left:90%;}
-
-/* ===== POPUP ===== */
+/* ================= POPUP ================= */
 .popup{
     position:fixed;
     inset:0;
-    background:rgba(0,0,0,0.5);
-    backdrop-filter:blur(6px);
+    background:rgba(0,0,0,0.55);
     display:none;
     justify-content:center;
     align-items:center;
-    z-index:5;
+    z-index:1000;
 }
 
 .popup-content{
-    background:#fff;
-    padding:35px;
-    max-width:500px;
+    background:white;
     width:90%;
-    border-radius:25px;
+    max-width:420px;
+    max-height:85vh;
+    padding:25px;
+    border-radius:20px;
     text-align:center;
-    animation:fadeUp 0.8s ease;
+    overflow-y:auto; /* FIX overflow */
 }
 
 .close{
-    position:absolute;
-    top:15px;
-    right:20px;
-    font-size:2em;
+    font-size:1.8rem;
+    float:right;
     cursor:pointer;
     color:#ff6b6b;
 }
 
-/* ===== ANIMATIONS ===== */
+/* ================= STICKERS (DESKTOP ONLY) ================= */
+.sticker{
+    position:absolute;
+    width:80px;
+    border-radius:18px;
+    animation:float 6s ease-in-out infinite;
+}
+
+/* ================= BALLOONS ================= */
+.balloon{
+    position:fixed;
+    bottom:-60px;
+    font-size:2rem;
+    animation:floatUp 6s linear infinite;
+    opacity:0.7;
+}
+
+/* ================= ANIMATIONS ================= */
 @keyframes bgMove{
     0%{background-position:0% 50%;}
     50%{background-position:100% 50%;}
     100%{background-position:0% 50%;}
 }
+
 @keyframes fadeUp{
-    from{opacity:0;transform:translateY(30px);}
+    from{opacity:0;transform:translateY(20px);}
     to{opacity:1;transform:translateY(0);}
 }
-@keyframes bounce{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-25px);}
-}
-@keyframes pop{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.1);}
-}
+
 @keyframes floatUp{
-    from{transform:translateY(100vh);}
-    to{transform:translateY(-120px);}
-}
-@keyframes pulse{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.05);}
-}
-@keyframes heartbeat{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.3);}
-}
-@keyframes spin{
-    from{transform:rotate(0deg);}
-    to{transform:rotate(360deg);}
+    from{transform:translateY(0);}
+    to{transform:translateY(-120vh);}
 }
 
-/* ===== 📱 MOBILE VIEW ===== */
+/* ================= 📱 MOBILE FIXES ================= */
 @media (max-width: 600px){
-    .container{
-        margin:20px;
-        padding:25px;
+
+    /* Hide stickers on phone */
+    .sticker{
+        display:none;
     }
-    h1{font-size:2.2em;}
-    p{font-size:1em;}
-    .cake{font-size:3em;}
-    .btn{font-size:1em;padding:12px 24px;}
-    .sticker{width:60px;}
+
+    h1{
+        font-size:2rem;
+    }
+
+    .container{
+        padding:22px;
+    }
+
+    /* Only 2 balloons */
+    .balloon:nth-child(n+3){
+        display:none;
+    }
 }
 </style>
 </head>
 
 <body>
 
-<!-- STICKERS -->
-<img src="bubu1.jpeg" class="sticker sticker1">
-<img src="bubu2.jpeg" class="sticker sticker2">
-<img src="bubu3.jpeg" class="sticker sticker3">
-<img src="bubu4.jpeg" class="sticker sticker4">
+<!-- DESKTOP STICKERS -->
+<img src="bubu1.jpeg" class="sticker" style="top:10%;left:5%;">
+<img src="bubu2.jpeg" class="sticker" style="top:15%;right:5%;">
 
 <!-- BALLOONS -->
-<div class="balloon">🎈</div>
-<div class="balloon">🎈</div>
-<div class="balloon">🎈</div>
-<div class="balloon">🎈</div>
-<div class="balloon">🎈</div>
+<div class="balloon" style="left:20%">🎈</div>
+<div class="balloon" style="left:70%">🎈</div>
 
 <div class="container">
     <h1>Happy Birthday My Love ❤️</h1>
     <p><b>Dear [Her Name],</b></p>
-    <p>You are my happiness, my peace, and my forever.</p>
+    <p>
+        You are my happiness, my peace, and my forever.
+        Every moment with you means everything to me.
+    </p>
 
     <div class="hearts">💖 💕 💖</div>
     <div class="cake">🎂</div>
@@ -210,9 +190,13 @@ p{
         <h2>💌 My Love Letter</h2>
         <p>
             You are my favorite person, my safest place,
-            and the best thing that ever happened to me.
+            and my greatest blessing.
         </p>
-        <p><b>I love you forever ❤️</b></p>
+        <p>
+            I promise to love you today,
+            tomorrow, and forever.
+        </p>
+        <p><b>Happy Birthday ❤️</b></p>
     </div>
 </div>
 
